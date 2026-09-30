@@ -1,73 +1,153 @@
-import { ArrowRight, BarChart3, Boxes, BriefcaseBusiness, Check, CircleDollarSign, Layers3, ShieldCheck, UsersRound } from "lucide-react";
+import {
+  ArrowRight,
+  BarChart3,
+  Boxes,
+  BriefcaseBusiness,
+  Check,
+  CircleDollarSign,
+  Layers3,
+  ShieldCheck,
+  Sparkles,
+  UsersRound,
+  Workflow
+} from "lucide-react";
 
 const modules=[
-  {icon:CircleDollarSign,title:"Financeiro",text:"Contas a pagar e receber, conciliação e uma visão clara do que entra, sai e fica pendente."},
-  {icon:BriefcaseBusiness,title:"Vendas & Serviços",text:"Orçamentos, vendas, ordens de serviço e acompanhamento comercial em um só fluxo."},
-  {icon:Boxes,title:"Estoque",text:"Catálogo, insumos, entradas, movimentações e apoio à reposição de materiais."},
-  {icon:UsersRound,title:"Clientes",text:"CRM 360° para centralizar histórico, relacionamento e informações importantes."},
-  {icon:BarChart3,title:"Relatórios",text:"Indicadores para acompanhar financeiro, vendas, estoque e clientes com mais contexto."},
-  {icon:Layers3,title:"Gestão integrada",text:"Os principais processos da empresa conectados para reduzir controles espalhados."}
+  {icon:CircleDollarSign,title:"Financeiro",text:"Contas a pagar e receber, conciliação, fluxo de caixa e visão dos resultados."},
+  {icon:BriefcaseBusiness,title:"Vendas & Serviços",text:"Orçamentos, vendas, ordens de serviço e acompanhamento comercial."},
+  {icon:Boxes,title:"Estoque",text:"Catálogo, insumos, entradas, movimentações e apoio à reposição."},
+  {icon:UsersRound,title:"Clientes",text:"CRM 360° para histórico, relacionamento e informações importantes."},
+  {icon:BarChart3,title:"Relatórios",text:"Indicadores para acompanhar as áreas do negócio com mais contexto."},
+  {icon:Layers3,title:"Gestão integrada",text:"Processos conectados para reduzir controles soltos e retrabalho."}
+];
+
+const flow=[
+  {n:"01",title:"Centralize",text:"Reúna as áreas mais importantes em um único ambiente."},
+  {n:"02",title:"Acompanhe",text:"Veja o que está acontecendo sem depender de várias ferramentas."},
+  {n:"03",title:"Decida",text:"Tenha mais contexto para agir com clareza no dia a dia."}
 ];
 
 export default function Home(){
  return <main className="orbeLanding">
-  <nav className="landingNav">
-   <a href="#topo" className="landingBrand">ORBE<span>.</span></a>
-   <div className="landingNavLinks">
-    <a href="#recursos">Recursos</a><a href="#porque">Por que ORBE</a>
-    <a className="landingLogin" href="#contato">Conhecer a ORBE <ArrowRight size={16}/></a>
-   </div>
-  </nav>
+  <header className="siteHeader">
+   <a href="#topo" className="brand">ORBE<span>●</span></a>
+   <nav>
+    <a href="#produto">Produto</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a className="headerCta" href="#contato">Conhecer a ORBE <ArrowRight size={15}/></a>
+   </nav>
+  </header>
 
-  <section className="landingHero" id="topo">
-   <div className="landingGlow glowA"/><div className="landingGlow glowB"/>
-   <div className="landingHeroCopy">
-    <span className="landingEyebrow">GESTÃO EMPRESARIAL EM UM SÓ LUGAR</span>
-    <h1>Tudo gira em torno do <em>seu negócio.</em></h1>
-    <p>Financeiro, vendas, estoque, clientes e operação conectados para você acompanhar a empresa com mais clareza e menos controles espalhados.</p>
-    <div className="landingActions">
-     <a className="landingPrimary" href="#recursos">Conhecer a ORBE <ArrowRight size={18}/></a>
-     <a className="landingSecondary" href="#porque">Por que ORBE</a>
+  <section className="heroV3" id="topo">
+   <div className="heroGrid"/>
+   <div className="heroOrb heroOrbA"/><div className="heroOrb heroOrbB"/>
+   <div className="heroCopy">
+    <span className="heroTag"><Sparkles size={14}/> GESTÃO EMPRESARIAL CONECTADA</span>
+    <h1>Mais visão.<br/>Menos <em>ruído.</em></h1>
+    <p>A ORBE conecta financeiro, vendas, estoque, clientes e operação para sua empresa funcionar com mais organização, clareza e controle.</p>
+    <div className="heroActions">
+     <a className="primaryBtn" href="#produto">Conhecer a ORBE <ArrowRight size={18}/></a>
+     <a className="ghostBtn" href="#recursos">Ver recursos</a>
     </div>
-    <div className="landingTrust">
-     <span><Check size={15}/> Gestão centralizada</span>
-     <span><Check size={15}/> Acesso online</span>
-     <span><Check size={15}/> Informações organizadas</span>
-    </div>
-   </div>
-
-   <div className="landingPreview">
-    <div className="previewTop"><div><i/><i/><i/></div><span>ORBE • VISÃO GERAL</span></div>
-    <div className="previewBody">
-     <aside><b>ORBE</b><span className="active">Visão Geral</span><span>Financeiro</span><span>Vendas</span><span>Estoque</span><span>Clientes</span><span>Relatórios</span></aside>
-     <section>
-      <div className="previewTitle"><div><small>PAINEL DE GESTÃO</small><strong>Visão geral da empresa</strong></div><ShieldCheck size={24}/></div>
-      <div className="previewStats"><article><small>Faturamento</small><strong>R$ 48.320</strong></article><article><small>Recebimentos</small><strong>R$ 36.740</strong></article><article><small>Clientes</small><strong>128</strong></article></div>
-      <div className="previewChart"><span style={{height:"46%"}}/><span style={{height:"72%"}}/><span style={{height:"58%"}}/><span style={{height:"83%"}}/><span style={{height:"68%"}}/><span style={{height:"94%"}}/><span style={{height:"76%"}}/></div>
-     </section>
+    <div className="heroProof">
+      <span><Check size={14}/> Uma visão da empresa</span>
+      <span><Check size={14}/> Menos controles paralelos</span>
+      <span><Check size={14}/> Rotina mais organizada</span>
     </div>
    </div>
-  </section>
 
-  <section className="landingStrip"><span>FINANCEIRO</span><i/><span>VENDAS</span><i/><span>ESTOQUE</span><i/><span>CLIENTES</span><i/><span>OPERAÇÃO</span><i/><span>RELATÓRIOS</span></section>
-
-  <section className="landingSection" id="recursos">
-   <div className="sectionIntro"><span>RECURSOS</span><h2>Uma plataforma para organizar a operação de ponta a ponta.</h2><p>A ORBE reúne as áreas mais importantes da empresa para transformar informação espalhada em uma visão mais simples do negócio.</p></div>
-   <div className="moduleGrid">{modules.map(({icon:Icon,title,text})=><article key={title}><div><Icon size={21}/></div><h3>{title}</h3><p>{text}</p></article>)}</div>
-  </section>
-
-  <section className="whySection" id="porque">
-   <div className="whyPanel">
-    <div><span>POR QUE ORBE</span><h2>Menos ferramentas soltas. Mais visão do negócio.</h2><p>Centralize informações importantes e acompanhe a operação sem depender de planilhas, anotações e sistemas desconectados.</p></div>
-    <ul><li><Check size={18}/> Informações centralizadas</li><li><Check size={18}/> Rotina mais organizada</li><li><Check size={18}/> Visão integrada da operação</li><li><Check size={18}/> Estrutura preparada para crescer</li></ul>
+   <div className="productStage">
+    <div className="stageGlow"/>
+    <div className="dashboardWindow">
+      <div className="dashTop"><div className="dots"><i/><i/><i/></div><span>ORBE • VISÃO GERAL</span><ShieldCheck size={18}/></div>
+      <div className="dashBody">
+        <aside>
+          <b>ORBE</b>
+          <span className="active">Visão Geral</span>
+          <span>Financeiro</span><span>Vendas</span><span>Estoque</span><span>Clientes</span><span>Relatórios</span>
+        </aside>
+        <section>
+          <div className="dashTitle"><div><small>PAINEL DE GESTÃO</small><strong>Visão geral da empresa</strong></div><div className="statusPill">Atualizado agora</div></div>
+          <div className="dashCards">
+            <article><small>FATURAMENTO</small><strong>R$ 48.320</strong><span>este mês</span></article>
+            <article><small>RECEBIMENTOS</small><strong>R$ 36.740</strong><span>confirmados</span></article>
+            <article><small>CLIENTES</small><strong>128</strong><span>ativos</span></article>
+          </div>
+          <div className="dashLower">
+            <div className="chartCard">
+              <div className="chartHead"><span>Desempenho</span><small>últimos períodos</small></div>
+              <div className="bars"><i style={{height:"38%"}}/><i style={{height:"58%"}}/><i style={{height:"48%"}}/><i style={{height:"75%"}}/><i style={{height:"64%"}}/><i style={{height:"90%"}}/><i style={{height:"72%"}}/></div>
+            </div>
+            <div className="activityCard">
+              <small>ATIVIDADE</small>
+              <p><i/> Pagamento recebido <b>R$ 1.280</b></p>
+              <p><i/> OS criada <b>#0284</b></p>
+              <p><i/> Estoque atualizado <b>+24</b></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
    </div>
   </section>
 
-  <section className="landingCta" id="contato">
-   <div><span>ORBE</span><h2>Seu negócio merece uma gestão à altura.</h2><p>Conheça uma forma mais conectada, organizada e simples de acompanhar a sua empresa.</p></div>
-   <a href="#topo">Conhecer a ORBE <ArrowRight size={18}/></a>
+  <section className="signalStrip">
+    <span>FINANCEIRO</span><i/><span>VENDAS</span><i/><span>ESTOQUE</span><i/><span>CLIENTES</span><i/><span>OPERAÇÃO</span><i/><span>RELATÓRIOS</span>
   </section>
 
-  <footer className="landingFooter"><b>ORBE</b><p>Tudo gira em torno do seu negócio.</p><span>© 2026 ORBE. Todos os direitos reservados.</span></footer>
+  <section className="productStory" id="produto">
+    <div className="storyLead">
+      <span>UMA OPERAÇÃO, UMA VISÃO</span>
+      <h2>Chega de gerir a empresa em pedaços.</h2>
+      <p>Quando cada área vive em uma ferramenta diferente, informação se perde, decisões atrasam e o retrabalho cresce. A ORBE reúne o que importa em uma experiência única.</p>
+    </div>
+    <div className="storyPanel">
+      <div className="storyVisual">
+        <Workflow size={34}/>
+        <strong>Financeiro</strong><i/><strong>Vendas</strong><i/><strong>Estoque</strong><i/><strong>Clientes</strong>
+      </div>
+      <div className="storyCopy">
+        <span>MENOS FRAGMENTAÇÃO</span>
+        <h3>As áreas conversam entre si.</h3>
+        <p>Você acompanha a empresa de forma integrada, sem precisar montar o quebra-cabeça toda vez que quer entender o que está acontecendo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section className="resources" id="recursos">
+    <div className="sectionHead">
+      <span>RECURSOS</span>
+      <h2>Uma base completa para a sua gestão.</h2>
+      <p>Os principais processos da empresa reunidos em uma plataforma feita para simplificar o dia a dia.</p>
+    </div>
+    <div className="resourceGrid">
+      {modules.map(({icon:Icon,title,text})=><article key={title}><div className="iconWrap"><Icon size={22}/></div><h3>{title}</h3><p>{text}</p><span className="cardLine"/></article>)}
+    </div>
+  </section>
+
+  <section className="how" id="como-funciona">
+    <div className="sectionHead darkHead">
+      <span>COMO FUNCIONA</span>
+      <h2>Centralize. Acompanhe. Decida.</h2>
+      <p>Uma lógica simples para transformar informação espalhada em uma visão útil do negócio.</p>
+    </div>
+    <div className="flowGrid">
+      {flow.map(item=><article key={item.n}><span>{item.n}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
+    </div>
+  </section>
+
+  <section className="finalCta" id="contato">
+    <div>
+      <span>ORBE</span>
+      <h2>Tudo gira em torno do seu negócio.</h2>
+      <p>Uma gestão mais conectada para empresas que querem crescer com mais clareza.</p>
+    </div>
+    <a href="#topo">Conhecer a ORBE <ArrowRight size={18}/></a>
+  </section>
+
+  <footer className="footerV3">
+    <b>ORBE</b><p>Tudo gira em torno do seu negócio.</p><span>© 2026 ORBE. Todos os direitos reservados.</span>
+  </footer>
  </main>
 }
